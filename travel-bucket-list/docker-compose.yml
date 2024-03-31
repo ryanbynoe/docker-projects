@@ -1,0 +1,25 @@
+version: '3.8' # Specifies the version of the Compose file format
+
+services: # Defines the services (containers) that make up the application
+
+  mongo: # Name of the service
+    image: mongo:latest # Use the latest version of the MongoDB official image
+    volumes: # Map volumes
+      - mongo-data:/data/db # Persist MongoDB data to a named volume
+
+  backend: # Backend service for handling API requests
+    build: ./backend # Specifies the directory containing the Dockerfile for building the image
+    ports: # Map ports
+      - '5000:5000' # Map port 5000 on the host to port 5000 in the container
+    depends_on: # Specifies dependencies
+      - mongo # Ensures MongoDB starts before the backend
+
+  frontend: # Frontend service serving the React application
+    build: ./frontend # Specifies the directory containing the Dockerfile for building the image
+    ports:
+      - '3000:5000' # Map port 3000 on the host to port 5000 in the container, where `serve` is listening
+    depends_on:
+      - backend # Ensures the backend starts before the frontend
+
+volumes: # Defines named volumes that can be used by the services
+  mongo-data: # Named volume for MongoDB data persistence
