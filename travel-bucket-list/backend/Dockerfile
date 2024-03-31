@@ -1,5 +1,5 @@
-# Use the latest Node.js 20 LTS (Long Term Support) version as the base image
-FROM node:20.12.0
+# Use the latest Node.js LTS (Long Term Support) version as the base image
+FROM node:21-alpine3.18
 
 # Set the working directory inside the container
 WORKDIR /app
