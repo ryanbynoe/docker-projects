@@ -13,5 +13,5 @@ RUN npm install
 # Copy the rest of the application's source code to the working directory
 COPY . .
 
-# Command to run the application
-CMD ["node", "server.js"]
+# Command to run the application with increased heap size limit
+CMD ["node", "--max-old-space-size=4096", "server.js"]

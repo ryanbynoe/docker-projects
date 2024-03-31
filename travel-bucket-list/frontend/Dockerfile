@@ -14,7 +14,7 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 # Build the React application
-RUN npm run build
+RUN NODE_OPTIONS=--max-old-space-size=4096 npm run build
 
 # Serve the application using serve, a static file serving package
 CMD ["npx", "serve", "-s", "build"]
