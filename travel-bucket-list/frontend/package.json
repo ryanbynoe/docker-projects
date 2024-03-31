@@ -9,13 +9,13 @@
       "axios": "^0.27.2"
     },
     "devDependencies": {
-      "@babel/core": "^7.18.0",
-      "@babel/eslint-parser": "^7.18.0",
-      "@babel/preset-env": "^7.18.0",
-      "@babel/preset-react": "^7.18.0",
-      "@rollup/plugin-terser": "^8.0.0",
-      "eslint": "^8.0.0",
-      "svgo": "^2.8.0"
+      "@babel/core": "^7.24.3",
+      "@babel/eslint-parser": "^7.24.1",
+      "@babel/preset-env": "^7.24.3",
+      "@babel/preset-react": "^7.24.1",
+      "@rollup/plugin-terser": "^0.4.4",
+      "eslint": "^9.0.0",
+      "svgo": "^3.2.0"
     },
     "scripts": {
       "start": "react-scripts start",
